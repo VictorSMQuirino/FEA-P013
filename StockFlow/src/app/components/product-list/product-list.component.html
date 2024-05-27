@@ -1,0 +1,11 @@
+<div class="header">
+    <h2>Lista de Produtos</h2>
+    <button mat-flat-button color="primary" [routerLink]="'/stockflow/produtos/cadastrar'">Adicionar</button>
+</div>
+<br>
+<table *ngIf="products.length; else emptyList" mat-table [dataSource]="products" class="mat-elevation-z8">
+
+</table>
+<ng-template #emptyList>
+    <p>Nenhum produto foi cadastrado.</p>
+</ng-template>
