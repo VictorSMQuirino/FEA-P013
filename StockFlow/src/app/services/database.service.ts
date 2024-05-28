@@ -44,4 +44,8 @@ export class DatabaseService {
     const productId = product.id;
     return this.http.put(`${this.API_URL}/products/${ productId }.json`, product, { observe: 'response' });
   }
+
+  deleteProduct(id: string) {
+    return this.http.delete(`${this.API_URL}/products/${ id }.json`);
+  }
 }
