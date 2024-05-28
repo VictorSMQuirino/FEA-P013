@@ -48,7 +48,7 @@ export class AuthService {
 
   observerUserState() {
     this.firebaseAuthenticationService.authState.subscribe((userState) => {
-      userState && this.ngZone.run(() => this.router.navigate(['stockflow']));
+      userState && this.ngZone.run(() => this.router.navigate(['stockflow/home']));
     })
   }
 

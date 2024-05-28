@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'stockflow', component: NavbarComponent, canActivate: [authGuard], children: [
+        { path: '', redirectTo: 'home', pathMatch: 'full' },
         { path: 'home', component: HomeComponent },
         { path: 'produtos', children: [
             { path: 'listar', component: ProductListComponent },

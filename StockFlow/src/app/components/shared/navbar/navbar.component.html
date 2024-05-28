@@ -6,6 +6,7 @@
     <span class="example-spacer"></span>
     <button mat-button routerLink="home">Home</button>
     <button mat-button>Sobre</button>
+    <button mat-button (click)="logout()">Sair</button>
 </mat-toolbar>
 <mat-drawer-container autosize>
     <mat-drawer #drawer opened="true" mode="side" position="start">
