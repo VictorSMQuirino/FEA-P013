@@ -7,12 +7,14 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { LoginComponent } from './components/login/login.component';
 import { authGuard } from './guards/auth.guard';
 import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'stockflow', component: NavbarComponent, canActivate: [authGuard], children: [
         { path: '', redirectTo: 'home', pathMatch: 'full' },
         { path: 'home', component: HomeComponent },
+        { path: 'about', component: AboutComponent },
         { path: 'produtos', children: [
             { path: 'listar', component: ProductListComponent },
             { path: 'cadastrar', component: ProductRegisterComponent },

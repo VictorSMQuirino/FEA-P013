@@ -1,0 +1,10 @@
+.card-sobre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+}
