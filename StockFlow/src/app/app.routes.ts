@@ -4,10 +4,11 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ProductRegisterComponent } from './components/product-register/product-register.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { LoginComponent } from './components/login/login.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'stockflow', pathMatch: 'full' },
-    { path: 'stockflow', component: NavbarComponent, children: [
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: 'stockflow', component: NavbarComponent, canActivate: [authGuard], children: [
         { path: 'produtos', children: [
             { path: 'listar', component: ProductListComponent },
             { path: 'cadastrar', component: ProductRegisterComponent },
