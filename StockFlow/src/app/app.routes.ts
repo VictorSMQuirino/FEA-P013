@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ProductRegisterComponent } from './components/product-register/product-register.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'stockflow', pathMatch: 'full' },
@@ -12,5 +13,6 @@ export const routes: Routes = [
             { path: 'cadastrar', component: ProductRegisterComponent },
             { path: 'editar/:id', component: EditProductComponent }
         ] },
-    ]}
+    ]},
+    { path: 'login', component: LoginComponent }
 ];

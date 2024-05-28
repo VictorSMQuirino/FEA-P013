@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterLink } from '@angular/router';
-import { DatabaseService } from '../../services/database.service';
+import { DatabaseService } from '../../services/database/database.service';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({

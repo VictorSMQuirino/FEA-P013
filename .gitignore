@@ -192,3 +192,8 @@ dist
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/angular,node,visualstudiocode
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

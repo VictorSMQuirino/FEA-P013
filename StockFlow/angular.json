@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "StockFlow": {
+    "stockflow": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "StockFlow:build:production"
+              "buildTarget": "stockflow:build:production"
             },
             "development": {
-              "buildTarget": "StockFlow:build:development"
+              "buildTarget": "stockflow:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "StockFlow:build"
+            "buildTarget": "stockflow:build"
           }
         },
         "test": {
