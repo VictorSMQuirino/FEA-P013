@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Detalhes do Produto
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <h6 matListItemTitle>Nome</h6>
+                <p matListItemLine>{{ product().name }}</p>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <h6 matListItemTitle>Descrição</h6>
+                <p matListItemLine>{{ product().description }}</p>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <h6 matListItemTitle>Quantidade</h6>
+                <p matListItemLine>{{ product().quantity }}</p>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <h6 matListItemTitle>Categoria</h6>
+                <p matListItemLine>{{ product().category }}</p>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <h6 matListItemTitle>Data de entrada</h6>
+                <p matListItemLine>{{ product().entryDate | date: 'dd/MM/yyyy' }}</p>
+            </mat-list-item>
+            <mat-list-item role="listitem" *ngIf="product().exitDate != null">
+                <h6 matListItemTitle>Data de saída</h6>
+                <p matListItemLine>{{ product().exitDate | date: 'dd/MM/yyyy' }}</p>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button routerLink="/stockflow/produtos/listar">VOLTAR</button>
+    </mat-card-actions>
+</mat-card>

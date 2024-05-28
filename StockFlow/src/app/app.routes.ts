@@ -1,3 +1,4 @@
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { Routes } from '@angular/router';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -15,7 +16,8 @@ export const routes: Routes = [
         { path: 'produtos', children: [
             { path: 'listar', component: ProductListComponent },
             { path: 'cadastrar', component: ProductRegisterComponent },
-            { path: 'editar/:id', component: EditProductComponent }
+            { path: 'editar/:id', component: EditProductComponent },
+            { path: 'detalhes/:id', component: ProductDetailsComponent }
         ] },
     ]},
     { path: 'login', component: LoginComponent }
