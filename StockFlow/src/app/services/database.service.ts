@@ -35,4 +35,13 @@ export class DatabaseService {
       })
     )
   }
+
+  getProductById(id: string) {
+    return this.http.get<Product>(`${this.API_URL}/products/${ id }.json`);
+  }
+
+  putProduct(product: Product) {
+    const productId = product.id;
+    return this.http.put(`${this.API_URL}/products/${ productId }.json`, product, { observe: 'response' });
+  }
 }

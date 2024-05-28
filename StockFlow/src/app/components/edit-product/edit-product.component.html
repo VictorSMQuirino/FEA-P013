@@ -10,9 +10,9 @@
                     <mat-form-field class="w-100">
                         <mat-label>Nome</mat-label>
                         <input matInput placeholder="Ex: Cadeira" 
-                            type="text" id="productName" formControlName="productName" required>
+                            type="text" id="productName" formControlName="name" required>
                     </mat-form-field>
-                    <span *ngIf="productForm.get('productName')?.errors && productForm.get('productName')?.touched" class="text-danger">
+                    <span *ngIf="productForm.get('name')?.errors && productForm.get('name')?.touched" class="text-danger">
                         O nome do produto é obrigatório
                     </span>
                 </div>
@@ -20,9 +20,9 @@
                     <mat-form-field class="w-100">
                         <mat-label>Descrição</mat-label>
                         <input matInput placeholder="Ex: Cadeira de plástico" 
-                            type="text" id="productDescription" formControlName="productDescription" required>
+                            type="text" id="productDescription" formControlName="description" required>
                     </mat-form-field>
-                    <span *ngIf="productForm.get('productDescription')?.errors && productForm.get('productDescription')?.touched" class="text-danger">
+                    <span *ngIf="productForm.get('description')?.errors && productForm.get('description')?.touched" class="text-danger">
                         A descrição do produto é obrigatória
                     </span>
                 </div>
@@ -30,12 +30,12 @@
                     <mat-form-field class="w-100">
                         <mat-label>Quantidade</mat-label>
                         <input matInput placeholder="Ex: 10" 
-                            type="number" id="productQuantity" formControlName="productQuantity" required>
+                            type="number" id="productQuantity" formControlName="quantity" required>
                     </mat-form-field>
-                    <span *ngIf="productForm.get('productQuantity')?.value === null && productForm.get('productQuantity')?.touched" class="text-danger">
+                    <span *ngIf="productForm.get('quantity')?.value === null && productForm.get('quantity')?.touched" class="text-danger">
                         A quantidade do produto é obrigatória
                     </span>
-                    <span *ngIf="productForm.get('productQuantity')?.hasError('invalidQuantity') && productForm.get('productQuantity')?.touched" class="text-danger">
+                    <span *ngIf="productForm.get('quantity')?.hasError('invalidQuantity') && productForm.get('quantity')?.touched" class="text-danger">
                         A quantidade deve ser maior do que 0
                     </span>
                 </div>
@@ -44,13 +44,13 @@
                 <div class="form-group col-md-4">
                     <mat-form-field class="w-100">
                         <mat-label>Categoria</mat-label>
-                        <mat-select formControlName="productCategory">
+                        <mat-select formControlName="category">
                             <mat-option *ngFor="let category of categories" [value]="category">
                                 {{category}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                    <span *ngIf="productForm.get('productCategory')?.errors && productForm.get('productCategory')?.touched" class="text-danger">
+                    <span *ngIf="productForm.get('category')?.errors && productForm.get('category')?.touched" class="text-danger">
                         A categoria do produto é obrigatória
                     </span>
                 </div>
@@ -81,7 +81,7 @@
             </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button type="submit">SALVAR</button>
+            <button mat-button type="submit" [disabled]="!productForm.valid">SALVAR</button>
             <button mat-button routerLink="/stockflow/produtos/listar">VOLTAR</button>
         </mat-card-actions>
     </mat-card>
